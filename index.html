@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Atividade 01</title>
+</head>
+
+<body>
+    <select id="atividade" onchange="SelecionaAtividade(event)">
+        <option disabled selected>Selecione uma opção</option>
+        <option value="1">Atividade 1</option>
+        <option value="2">Atividade 2</option>
+        <option value="3">Atividade 3</option>
+        <option value="4">Atividade 4</option>
+        <option value="5">Atividade 5</option>
+    </select>
+</body>
+
+<script defer>
+    console.log("oi")
+    function SelecionaAtividade(e) {
+        let atividade = e.target.value;
+        switch (atividade) {
+            case "1": Atividade1()
+            case "2": Atividade2()
+            case "3": Atividade3()
+            case "4": Atividade4()
+            case "5": Atividade5()
+        }
+
+    }
+    function Atividade1() {
+        let salario;
+        let nome;
+        let novo_salario;
+        nome = prompt("Digite seu nome");
+        salario = prompt("Digite seu salario")
+
+        novo_salario = parseInt(salario) * 0.1;
+        alert(`Parabens ${nome}, seu novo salário é de ${novo_salario.toFixed(2)}`)
+    }
+    function Atividade2() {
+
+        let valorA;
+        let valorB
+        let valorC;
+        valorA = parseInt(prompt("Digite o valor de A"));
+        valorB = parseInt(prompt("Digite o valor de B"));
+
+        if (valorA == valorB) {
+            valorC = valorA + valorB
+        } else {
+            valorC = valorA * valorB
+        }
+
+        alert(`O valor C é ${valorC}`);
+    }
+    function Atividade3() {
+        let preco = parseInt(prompt("Digite o preço à vista"));
+        let parcela = parseInt(prompt("Digite o numero de parcelas (3 ou 5)"));
+        let preco_total;
+        let valor_parcela;
+        
+        if (parcela == 3) {
+            preco_total = preco * 0.1 ;
+            valor_parcela = preco_total / 3;
+        } else if (parcela == 5) {
+            preco_total = preco * 0.2;
+            valor_parcela = preco / 5;
+        }
+
+        alert(`O valor total a se pagar é ${preco_total} em prestações de ${valor_parcela}`);
+    }
+    function Atividade4() {
+        let nome = prompt("Digite o nome do aluno:");
+        let nota1 = parseInt(prompt("Digite a primeira nota:"));
+        let nota2 = parseInt(prompt("Digite a segunda nota:"));
+        let nota3 = parseInt(prompt("Digite a terceira nota:"));
+        let media; 
+        let aprovacao;
+
+        console.log(nota1);
+
+        media = (nota1 + nota2 + nota3) / 3;
+
+        if(media >= 7) {
+            aprovacao = "aprovado"
+        }else {
+            aprovacao = "reprovado"
+        }
+
+        alert(`O/A aluno/a ${nome} com média de ${media.toFixed(2)} foi ${aprovacao}.`)
+    }
+    function Atividade5() {
+        let num = parseInt(prompt("Digite um numero de 1 a 12"));
+        
+        switch (opcao) {
+            case 1: "Janeiro"; break;
+            case 2: "Fevereiro"; break;
+            case 3: "Março"; break;
+            case 4: "Abril"
+            case 5: "Maio"
+            case 6: "Junho"
+            case 7: "Julho"
+            case 8: "Agosto"
+            case 9: "Setembro"
+            case 10: "Outubro"
+            case 11: "Novembro"
+            case 12: "Dezembro"
+        }
+    }
+</script>
+
+</html>
